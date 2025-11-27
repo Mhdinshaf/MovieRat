@@ -9,7 +9,7 @@ function searchMovies() {
        return; 
     }
 
-    var url = apiUrl+ "?apikey" +apiKey+"" +movieName;
+    var url = apiUrl + "?apikey=" + apiKey + "&s=" + movieName;
 
     fetch(url)
         .then(function (response) { 
@@ -26,14 +26,11 @@ function searchMovies() {
             console.log("Error fetching data: ", error);
     });
 }
+
 function discoverMovie() {
     
     var keywords = ["Spider", "Bat", "Super", "Fast", "Joker", "Harry", "Iron", "Captain"];
-    
-   
     var randomIndex = Math.floor(Math.random() * keywords.length);
-    
-
     var selectedWord = keywords[randomIndex];
     
    
@@ -45,7 +42,7 @@ function displayMovies(movies) {
     var container = document.getElementById("movieContainer");
     container.innerHTML = "";  
 
-For (var i = 0; i < movies.length; i++) {
+for (var i = 0; i < movies.length; i++) {
     var movie = movies[i];
 
     var poster = movie.Poster
@@ -53,7 +50,7 @@ For (var i = 0; i < movies.length; i++) {
         poster = "https://via.placeholder.com/300";
     }
 
-    var movieCard = `
+    var Card = `
     <div class="col-md-4 mb-4">
         <div class="card">
             <img src="${poster}" class="card-img-top" alt="${movie.Title}">
@@ -65,9 +62,10 @@ For (var i = 0; i < movies.length; i++) {
         </div>
     </div>
     `;
-    container.innerHTML += movieCard;
+    container.innerHTML += Card;
     }  
 }
+
 function getMovieDetails(id) {
 
     var url = apiUrl + "?apikey=" + apiKey + "&i=" + id;
@@ -94,4 +92,14 @@ function getMovieDetails(id) {
         myModal.show();
     });
 }
+
+window.onload = function() {
+   
+    document.getElementById("searchInput").value = "Avengers";
+    searchMovies();
+    
+    setTimeout(function() {
+        document.getElementById("searchInput").value = "";
+    }, 1000);
+};
 

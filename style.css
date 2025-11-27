@@ -1,0 +1,13 @@
+
+.card {
+    transition: transform 0.2s;
+    border: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border: 2px solid #ffc107; 
+}
+.card-img-top {
+    object-fit: cover;
+}
