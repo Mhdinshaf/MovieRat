@@ -51,16 +51,15 @@ for (var i = 0; i < movies.length; i++) {
     }
 
     var Card = `
-    <div class="col-md-4 mb-4">
-        <div class="card">
-            <img src="${poster}" class="card-img-top" alt="${movie.Title}">
-            <div class="card-body">
-                <h5 class="card-title">${movie.Title}</h5>
-                <p class="card-text">Year: ${movie.Year}</p>
-                <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank" class="btn btn-primary">View on IMDb</a>      
+       <div class="col-md-3 col-6 mb-3">
+                <div class="card h-100 bg-secondary text-white" onclick="getMovieDetails('${movie.imdbID}')">
+                    <img src="${poster}" class="card-img-top" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">${movie.Title}</h5>
+                        <p class="card-text">${movie.Year}</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
     `;
     container.innerHTML += Card;
     }  
