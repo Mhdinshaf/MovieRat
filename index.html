@@ -10,12 +10,23 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="bg-dark text-white">
     <nav class="navbar navbar-expand-lg navbar-dark bg-black py-3">
       <div class="container">
         <a class="navbar-brand fw-bold text-warning" href="index.html">RAT MOVIE</a>
         <script src="app.js"></script>
       </div>
     </nav>
+    <div class="container text-center my-5">
+        <h1>Search For Movies</h1>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+            <div class="input-group mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Enter Mmvie title (e.g.Batman)...">
+            <button class="btn btn-warning" onclick="searchMovies()">search</button>
+        </div>
+        </div>
+        </div>
+    </div>
   </body>
 </html>
